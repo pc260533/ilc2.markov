@@ -19,6 +19,10 @@ public class MarkovChain {
 	/** Seed generator for randow  */
     private MarkovData data = null;
 
+    public MarkovData getData() {
+        return data;
+    }
+
 	public MarkovChain (int ngram){
 		this.ngram = ngram;
 		this.data = new MarkovData();

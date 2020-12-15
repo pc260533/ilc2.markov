@@ -23,8 +23,8 @@ public class MarkovData {
 	public boolean renforceWord(String keyString, String wordToLearn) {
 		String value;
 		boolean isNewKey = containsKeyWord(keyString);
-		
-		// if chain in list then add extra word
+
+                // if chain in list then add extra word
 		if(isNewKey){
 			value = getLearnedWord(keyString);
 			value += " " + wordToLearn;
