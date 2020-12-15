@@ -18,30 +18,40 @@
 ## Analyze IADT functions
 Hereafter, for each classes give function to be tested. Remember that all functions does not have to be tested, some code can be checked by a simple inspection or an analyse, another code can be validated by definition (rules, etc) the others function can be tecsted by unit tests, integration tests or validation tests (IADT: Inspect, Analyse, Define, Test). 
 
+| Validation Mode |   Why ? When ?  |
+| :-------------: | :-------------: |
+| I: Inspect | No test needed, just a simple static test (visual) on a subset of classes (commentaries, indentation, etc.) |
+| A: Analyze | Not easy to test but the algorithm is well know and can be check by a static analyze |
+| D: Def/Dem | You can Demonstrate the function or by Definition the function needs not test (generate code, call functions, etc.)|
+| T: Test | the function can be easly test |
+
 ### Class app.MarkovApp
 
 | Function      |     I A D T     |        Comment |
 | :------------ | :-------------: | :------------- |
-| main |  |  | 
-| readFileAsString |  |  | 
+| main | D | C'est le point d'entrée de l'application il n'a pas besoin d'être testé. | 
+| readFileAsString | T | On peut tester que la chaine de caractères retournée est la même que celle d'un fichier connu. | 
 
 ### Class markov.MarkovChain
 
 | Function      |     I A D T     |        Comment |
 | :------------ | :-------------: | :------------- |
-| MarkovChain  |  |  |
-| generateMarkov  |  |  |
-| learn  |  |  |
-| setRgen  |  |  |
+| MarkovChain  | D | C'est le constructeur de la classe. C'est difficilement testable. |
+| generateMarkov  | T | On peut tester cette méthode. |
+| learn  | T | On peut tester cette méthode. |
+| setRgen  | D | Cette méthode est un setter autogénéré. |
 
 ### Class markov.MarkovData
 
 | Function      |     I A D T     |        Comment |
 | :------------ | :-------------: | :------------- |
-| read  |  |  |
-| learnWord  |  |  |
-| renforceWord  |  |  |
-| Etc.  |  |  |
+| read  | T | On peut tester cette méthode. |
+| learnWord  | D | On ne teste pas la méthode put de la classe Map de Java. |
+| renforceWord  | T | On peut tester cette méthode. |
+| containsKeyWord  | D | On ne teste pas la méthode containsKeyWord de la classe Map de Java. |
+| getLearnedWord  | D | On ne teste pas la méthode get de la classe Map de Java. |
+| getKeyWord  | D | On ne teste pas la méthode get de la classe List de Java. |
+| keyWordSize  | D | On ne teste pas la méthode size de la classe List de Java. |
 
 ## Functions to test now
 
